@@ -1,0 +1,53 @@
+{
+    "name": "techsoftye/api",
+    "description": "simple api settings",
+    "keywords": [
+        "techsoftye",
+        "laravel",
+        "api"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohammed Rassam",
+            "email": "tehcsoft.ye@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "spatie/laravel-package-tools": "^1.4.3",
+        "illuminate/contracts": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Techsoft\\Api\\": "src",
+            "Techsoft\\Api\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Techsoft\\Api\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Techsoft\\Api\\ApiServiceProvider"
+            ],
+            "aliases": {
+                "Techsoft": "Techsoft\\Api\\ApiFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
